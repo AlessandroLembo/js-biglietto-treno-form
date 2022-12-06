@@ -40,11 +40,19 @@ const age = document.getElementById("age");
 const upLoad = document.getElementById("upload");
 const finalPrice = document.getElementById("final-price");
 const recharge = document.getElementById("recharge");
+const numberWagon = document.getElementById("wagon");
+const ticketCode = document.getElementById("ticket-code");
 
 console.log(distance, age, upLoad);
 
 // 2 - Creo una variabile per il prezzo del biglietto per chilometro.
 const unitPrice = 0.21;
+
+// Creo delle variabili per generare numeri random
+const random = Math.random();
+const maxRandomWagon = 9;
+const minRandomCode = 10000;
+const maxRandomCode = 99999;
 
 // 3 - Aggancio l'event listener al button che carica i dati.
 upLoad.addEventListener('click' , function(){
@@ -81,7 +89,13 @@ console.log(textDistance, textAge);
     }
 
     }
+    
+    // Generare numeri random per la carrozza ed il codice del biglietto
+    let result = Math.floor(random * maxRandomWagon) + 1;
+    numberWagon.innerText = result;
 
+    result = Math.floor(random * (maxRandomCode + 1 - minRandomCode)) + minRandomCode;
+    ticketCode.innerText = result;
 
 });
 
