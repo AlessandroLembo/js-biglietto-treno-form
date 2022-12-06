@@ -22,15 +22,37 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 ANALISI
 1 - Prendere gli elementi dalla pagina.
 2 - Creare una variabile per il prezzo del biglietto per chilometro. 
-3 - Chiedere all'utente quanti chilometri vuole percorrere e salvare la risposta nella variabile. 
-4 - Chiedere all'utente la sua età e salvare la risposta nella variabile.
-5 - Calcolare il prezzo del biglietto in base ai chilometri (0.21 € al Km).
-6 - In base all'età verficare se l'utente ha diritto a uno sconto:
+3 - Aggancio l'event listener al button che carica i dati.
+4 - Inserisco i chilometri che voglio percorrere e li salvo in una variabile.
+5 - Inserisco la mia età e la salvo in una variabile.
+6 - Calcolare il prezzo del biglietto in base ai chilometri (0.21 € al Km).
+7 - In base all'età verficare se l'utente ha diritto a uno sconto:
     -- l'utente ha un'età compresa tra i 19 e i 64 anni: nessuno sconto.
     -- l'utente ha un'età minore o uguale ai 18 anni: calcola lo sconto del 20%.
     -- l'utente ha un'età maggiore o uguale a 65 anni: calcola lo sconto del 40%.
-7 - Stampare il prezzo totale del viaggio.
+8 - Stampare il prezzo totale del viaggio.
 */
 
 // 1 - Prendo gli elementi dalla pagina
+const distance = document.getElementById("distance");
+const age = document.getElementById("age");
+const upLoad = document.getElementById("upload");
+
+console.log(distance, age, upLoad);
+
+// 2 - Creo una variabile per il prezzo del biglietto per chilometro.
+const unitPrice = 0.21;
+
+// 3 - Aggancio l'event listener al button che carica i dati.
+upLoad.addEventListener('click' , function(){
+
+// 4e5 - Inserisco i dati richiesti e li salvo in una variabile. 
+    const textDistance = distance.value;
+    const textAge = age.value;
+    console.log(textDistance, textAge);
+    
+    
+
+});
+
 
