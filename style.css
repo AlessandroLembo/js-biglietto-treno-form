@@ -1,6 +1,9 @@
 /* CSS Reset */
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+body{
+    background-color: lightgray;
+}
+
+#upload{
+    height: 40px;
+    border: 1px solid black;
 }

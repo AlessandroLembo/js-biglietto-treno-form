@@ -38,6 +38,7 @@ ANALISI
 const distance = document.getElementById("distance");
 const age = document.getElementById("age");
 const upLoad = document.getElementById("upload");
+const finalPrice = document.getElementById("final-price")
 
 console.log(distance, age, upLoad);
 
@@ -62,20 +63,24 @@ console.log(textDistance, textAge);
     // 7 - Calcolo il prezzo del biglietto in base ai chilometri da percorrere.
     const grossPrice = (unitPrice * textDistance).toFixed(2);    
     
-    // 8 - in base all'età verificare se l'utente ha diritto a uno sconto.   
+    // 8e9 - in base all'età verificare se l'utente ha diritto a uno sconto e stampare il prezzo in pagina  
     if (textAge > 18 && textAge < 65) {
        console.log(`Il prezzo da pagare è £ ${grossPrice}`)
+       finalPrice.innerText = (`Il costo del biglietto è di £ ${grossPrice}`)
     
     } else if(textAge < 19){
        const smallDiscount = ((grossPrice / 100) * 80).toFixed(2);
        console.log(`Il prezzo per i minorenni è di ${smallDiscount}`)
+       finalPrice.innerText = (`Il costo del biglietto è di £ ${smallDiscount}`)
 
     } else {
        const bigDiscount = ((grossPrice / 100) * 60).toFixed(2);
        console.log(`Il prezzo per gli over 65 è di ${bigDiscount}`)
+       finalPrice.innerText = (`Il costo del biglietto è di £ ${bigDiscount}`)
     }
 
     }
+
 
 });
 
