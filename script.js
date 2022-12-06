@@ -21,8 +21,8 @@ Il recap dei dati e l'output del prezzo finale, andranno quindi stampati in pagi
 /*
 ANALISI
 1 - Prendere gli elementi dalla pagina.
-2 - Creare una variabile per il prezzo del biglietto per chilometro. 
-3 - Aggancio l'event listener al button che carica i dati.
+2 - Aggancio l'event listener al button che carica i dati.
+3 - Creare una variabile per il prezzo del biglietto per chilometro.
 4 - Inserisco i chilometri che voglio percorrere e li salvo in una variabile.
 5 - Inserisco la mia età e la salvo in una variabile.
 6 - Calcolare il prezzo del biglietto in base ai chilometri (0.21 € al Km).
@@ -40,16 +40,21 @@ const upLoad = document.getElementById("upload");
 
 console.log(distance, age, upLoad);
 
-// 2 - Creo una variabile per il prezzo del biglietto per chilometro.
-const unitPrice = 0.21;
 
-// 3 - Aggancio l'event listener al button che carica i dati.
+// 2 - Aggancio l'event listener al button che carica i dati.
 upLoad.addEventListener('click' , function(){
+
+// 3 - Creo una variabile per il prezzo del biglietto per chilometro.
+    const unitPrice = 0.21;
 
 // 4e5 - Inserisco i dati richiesti e li salvo in una variabile. 
     const textDistance = distance.value;
     const textAge = age.value;
     console.log(textDistance, textAge);
+
+// 6 - Calcolo il prezzo del biglietto in base ai chilometri da percorrere.
+    const grossPrice = (unitPrice * textDistance).toFixed(2);    
+    console.log(grossPrice);
     
     
 
