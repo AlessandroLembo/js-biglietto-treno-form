@@ -53,9 +53,10 @@ upLoad.addEventListener('click' , function(){
     console.log(textDistance, textAge);
 
 // 6 - Calcolo il prezzo del biglietto in base ai chilometri da percorrere.
-    const grossPrice = (unitPrice * textDistance).toFixed(2);    
-    console.log(grossPrice);
+    let grossPrice = (unitPrice * textDistance).toFixed(2);    
+    console.log(`Il prezzo da pagare è £ ${grossPrice}`);
     
+// 7 - in base all'età verificare se l'utente ha diritto a uno sconto.    
     
 
 });
