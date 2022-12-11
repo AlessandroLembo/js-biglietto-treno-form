@@ -58,8 +58,8 @@ const maxRandomCode = 99999;
 upLoad.addEventListener('click' , function(){
     
 // 4e5 - Inserisco i dati richiesti e li salvo in una variabile. 
-const textDistance = distance.value;
-const textAge = age.value;
+const textDistance = parseInt(distance.value.trim());
+const textAge = parseInt(age.value.trim());
 console.log(textDistance, textAge);
 
 // 6 - Controllo che il valore dei dati inseriti sia corretto.
