@@ -65,7 +65,6 @@ console.log(textDistance, textAge);
 // 6 - Controllo che il valore dei dati inseriti sia corretto.
     if (isNaN(textDistance) || isNaN(textAge) || textDistance <= 0 || textAge <= 0) {
        alert("inserire solo valori numerici interi e maggiori di 0")
-
     } else {
 
     // 7 - Calcolo il prezzo del biglietto in base ai chilometri da percorrere.
