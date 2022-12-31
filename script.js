@@ -42,6 +42,7 @@ const finalPrice = document.getElementById("final-price");
 const recharge = document.getElementById("recharge");
 const numberWagon = document.getElementById("wagon");
 const ticketCode = document.getElementById("ticket-code");
+const cleanFieldButton = document.getElementById('clean-field');
 
 console.log(distance, age, upLoad);
 
@@ -94,6 +95,15 @@ console.log(textDistance, textAge);
 
     result = Math.floor(random * (maxRandomCode + 1 - minRandomCode)) + minRandomCode;
     ticketCode.innerText = result;
+
+});
+
+cleanFieldButton.addEventListener('click', function(){
+    distance.value = '';
+    age.value = '';
+    finalPrice.innerText = '';
+    numberWagon.innerText = '';
+    ticketCode.innerText = '';
 
 });
 
