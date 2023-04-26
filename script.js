@@ -44,28 +44,30 @@ const numberWagon = document.getElementById("wagon");
 const ticketCode = document.getElementById("ticket-code");
 const cleanFieldButton = document.getElementById('clean-field');
 
-console.log(distance, age, upLoad);
 
 // 2 - Creo una variabile per il prezzo del biglietto per chilometro.
 const unitPrice = 0.21;
 
 // Creo delle variabili per generare numeri random
-const random = Math.random();
 const maxRandomWagon = 9;
 const minRandomCode = 10000;
 const maxRandomCode = 99999;
+let result = 0;
 
 // 3 - Aggancio l'event listener al button che carica i dati.
 upLoad.addEventListener('click' , function(){
-    
+   
+const random = Math.random();
+console.log(random);
+
 // 4e5 - Inserisco i dati richiesti e li salvo in una variabile. 
-const textDistance = parseInt(distance.value.trim());
-const textAge = parseInt(age.value.trim());
-console.log(textDistance, textAge);
+let textDistance = distance.value.trim();
+const textAge = age.value.trim();
 
 // 6 - Controllo che il valore dei dati inseriti sia corretto.
     if (isNaN(textDistance) || isNaN(textAge) || textDistance <= 0 || textAge <= 0) {
        alert("inserire solo valori numerici interi e maggiori di 0")
+       return;
     } else {
 
     // 7 - Calcolo il prezzo del biglietto in base ai chilometri da percorrere.
@@ -73,32 +75,30 @@ console.log(textDistance, textAge);
     
     // 8e9 - in base all'età verificare se l'utente ha diritto a uno sconto e stampare il prezzo in pagina  
     if (textAge > 18 && textAge < 65) {
-       console.log(`Il prezzo da pagare è € ${grossPrice}`)
        finalPrice.innerText = (`Il costo del biglietto è di € ${grossPrice}`)
     
     } else if(textAge < 19){
        const smallDiscount = ((grossPrice / 100) * 80).toFixed(2);
-       console.log(`Il prezzo per i minorenni è di € ${smallDiscount}`)
        finalPrice.innerText = (`Il costo del biglietto è di € ${smallDiscount}`)
 
     } else {
        const bigDiscount = ((grossPrice / 100) * 60).toFixed(2);
-       console.log(`Il prezzo per gli over 65 è di € ${bigDiscount}`)
        finalPrice.innerText = (`Il costo del biglietto è di € ${bigDiscount}`)
     }
 
     }
     
     // Generare numeri random per la carrozza ed il codice del biglietto
-    let result = Math.floor(random * maxRandomWagon) + 1;
+    result = Math.floor(random * maxRandomWagon) + 1;
     numberWagon.innerText = result;
 
     result = Math.floor(random * (maxRandomCode + 1 - minRandomCode)) + minRandomCode;
     ticketCode.innerText = result;
 
-});
-
-cleanFieldButton.addEventListener('click', function(){
+    
+   });
+   
+   cleanFieldButton.addEventListener('click', function(){
     distance.value = '';
     age.value = '';
     finalPrice.innerText = '';
